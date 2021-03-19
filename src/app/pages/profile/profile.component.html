@@ -1,0 +1,57 @@
+<div class="container container-fluid">
+  <div class="row mt-5">
+    <div class="col col-6">
+      <div class="card">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="mb-3">
+              <label for="displayName" class="form-label">UserName</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter User name"
+                name="userName"
+                ngModel
+              />
+            </div>
+            <div class="mb-3">
+              <label for="displayPicture" class="form-label"
+                >Upload Picture</label
+              >
+              <input
+                type="file"
+                class="form-control-file"
+                placeholder="select profile picture"
+                name="profilePicture"
+                ngModel
+              />
+            </div>
+
+            <div class="mb-3">
+              <button
+                type="submit"
+                class="btn btn-submit text-white font-weight-bold p-3 w-25 rounded-pill"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col col-6">
+      <h5
+        class="text-success text-uppercase mt-5 text-center"
+        *ngIf="displayPicture"
+      >
+        Your Image
+      </h5>
+      <img
+        *ngIf="displayPicture"
+        [src]="displayPicture"
+        width="100"
+        height="100"
+      />
+    </div>
+  </div>
+</div>

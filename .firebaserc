@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-03": {
+      "hosting": {
+        "postit": [
+          "angular-03"
+        ]
+      }
+    }
+  }
+}

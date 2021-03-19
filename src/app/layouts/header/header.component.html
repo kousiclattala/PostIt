@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg" id="bg-colour">
+  <div class="container-fluid d-flex d-inline-block">
+    <a routerLink="/home" class="navbar-brand pl-5 text-white font-weight-bold"
+      ><i class="bi bi-camera"></i> PostIt</a
+    >
+
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="user">
+          <a routerLink="/profile" class="nav-link text-white font-weight-bold"
+            ><img [src]="user?.photoURL" width="40" height="40"
+          /></a>
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a
+            routerLink="/profile"
+            routerLinkActive="active"
+            class="nav-link text-white font-weight-bold"
+            >{{ user?.displayName || user?.email }}</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a
+            routerLink="/signin"
+            routerLinkActive="active"
+            class="nav-link text-white font-weight-bold"
+            >SignIn</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a
+            routerLink="/signup"
+            routerLinkActive="active"
+            class="nav-link text-white font-weight-bold"
+            >SignUp</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a
+            routerLink="/signin"
+            routerLinkActive="active"
+            class="nav-link text-white font-weight-bold"
+            (click)="handleSignOut()"
+            >LogOut</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <button class="btn btn-warning p-0">
+            <a
+              routerLink="/addpost"
+              class="nav-link text-white font-weight-bold"
+              >Add Post</a
+            >
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

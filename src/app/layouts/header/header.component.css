@@ -1,0 +1,7 @@
+#bg-colour {
+  background: linear-gradient(to right, #dd00ff 0%, #1900ff 100%) no-repeat;
+}
+
+.active {
+  border-bottom: 2px solid white;
+}
